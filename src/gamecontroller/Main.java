@@ -9,16 +9,19 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         GameSetting setting = new GameSetting();
         GameResult result = new GameResult();
+        Enemy enemy = new Enemy();
 
         System.out.println("================");
         System.out.println("야구게임을 시작합니다.");
 
         // 섞은 난수를 shuffleNumbers 변수에 저장한다.
         List<Integer> shuffleNumbers = setting.gameSetting();
+        String enemyPickNumbers = enemy.enemyPickNumbers(shuffleNumbers);
 
         // 플레이어는 세자리 숫자를 입력한다.
         System.out.print("숫자를 입력해주세요 ! 예) 123 ");
-        int playerPickNumbers = sc.nextInt();
-        result.gameResult();
+        String playerPickNumbers = sc.next();
+
+        result.gameResult(playerPickNumbers, enemyPickNumbers);
     }
 }

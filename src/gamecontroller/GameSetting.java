@@ -6,6 +6,8 @@ public class GameSetting {
 
     public List<Integer> gameSetting() {
         Enemy enemy = new Enemy();
-        return enemy.shuffleNumbers();
+        List<Integer> shuffleResult = enemy.shuffleNumbers();
+
+        return shuffleResult;
     }
 }
