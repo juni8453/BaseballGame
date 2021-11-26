@@ -10,6 +10,8 @@ public class Main {
         GameSetting setting = new GameSetting();
         GameResult result = new GameResult();
 
+        GameResult result = new GameResult();
+
         System.out.println("================");
         System.out.println("야구게임을 시작합니다.");
 
