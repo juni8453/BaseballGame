@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         GameSetting setting = new GameSetting();
+
         GameResult result = new GameResult();
 
         System.out.println("================");
