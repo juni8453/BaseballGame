@@ -15,3 +15,4 @@ public class GameStart {
         result.gameResult(playerPickNumbers, enemyPickNumbers);
     }
 }
+

@@ -1,11 +1,8 @@
 package gamecontroller;
 
-import java.util.Scanner;
-
 // 전체적인 게임 진행을 담당하는 클래스
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         GameSetting setting = new GameSetting();
         GameStart start = new GameStart();
 
