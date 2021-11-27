@@ -21,7 +21,7 @@ public class GameSetting {
 
     // 숫자열 -> 문자열 -> 앞 3글자만 잘라서 return
     public String enemyPickNumbers(List<Integer> shuffleResult) {
-        String shuffleNumbersJoin = runShuffle().stream()
+        String shuffleNumbersJoin = shuffleResult.stream()
                 .map(String::valueOf)
                 .collect(Collectors.joining());
 
