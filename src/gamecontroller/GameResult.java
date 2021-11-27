@@ -7,11 +7,19 @@ public class GameResult {
 
     public void gameResult(String playerPickNumbers, String enemyPickNumbers) {
         GameStart start = new GameStart();
-        strike(playerPickNumbers, enemyPickNumbers);
+        calculatorStrikeCount(playerPickNumbers, enemyPickNumbers);
 
-        // 게임을 계속 진행해야 할 때,
+        // 낫싱일 때
+        if (strikeCount == 0) {
+            System.out.println("일치하는 숫자가 없습니다 !");
+            start.runGame(enemyPickNumbers);
+        }
+
+        // 게임을 더 진행해야할 때,
         if (strikeCount != 3) {
+            calculatorBallCount(playerPickNumbers, enemyPickNumbers);
             System.out.println(strikeCount + "스트라이크");
+
             if (ballCount != 0) {
                 System.out.println(ballCount + "볼");
             }
@@ -27,24 +35,23 @@ public class GameResult {
         }
     }
 
-    public void strike(String playerPickNumbers, String enemyPickNumbers) {
+    // 3 스트라이크가 아니라면 볼이 있을 수도 있으니까 검사해주는 메소드 생성
+    public void calculatorBallCount(String playerPickNumbers, String enemyPickNumbers) {
         for (int i = 0; i < playerPickNumbers.length(); i++) {
+            for (int j = 0; j < enemyPickNumbers.length(); j++) {
+                if (playerPickNumbers.charAt(i) == enemyPickNumbers.charAt(j) && i != j) {
+                    ballCount += 1;
+                }
+            }
+        }
+    }
+
+    public void calculatorStrikeCount(String playerPickNumbers, String enemyPickNumbers) {
+        for (int i = 0; i < playerPickNumbers.length(); i++) {
+            // 상대방의 숫자와 플레이어의 숫자를 각 자리마다 비교해서 같은 숫자가 있다면 strikeCount + 1
             if (playerPickNumbers.charAt(i) == enemyPickNumbers.charAt(i)) {
                 strikeCount += 1;
             }
         }
     }
 }
-
-// 1 스트라이크
-
-// 1 스트라이크 1볼
-
-// 1 스트라이크 2볼
-
-// 2 스트라이크
-
-// 2 스트라이크 1볼
-
-// 3 스트라이크
-
