@@ -49,10 +49,14 @@ public class GameResult {
     // 3 스트라이크가 아니라면 볼이 있을 수도 있으니까 검사해주는 메소드 생성
     public void calculatorBallCount(String playerPickNumbers, String enemyPickNumbers) {
         for (int i = 0; i < playerPickNumbers.length(); i++) {
-            for (int j = 0; j < enemyPickNumbers.length(); j++) {
-                if (playerPickNumbers.charAt(i) == enemyPickNumbers.charAt(j) && i != j) {
-                    ballCount += 1;
-                }
+            extracted(playerPickNumbers, enemyPickNumbers, i);
+        }
+    }
+
+    public void extracted(String playerPickNumbers, String enemyPickNumbers, int i) {
+        for (int k = 0; k < enemyPickNumbers.length(); k++) {
+            if (playerPickNumbers.charAt(i) == enemyPickNumbers.charAt(k) && i != k) {
+                ballCount += 1;
             }
         }
     }
