@@ -9,20 +9,12 @@ public class GameResult {
         GameStart start = new GameStart();
         calculatorStrikeCount(playerPickNumbers, enemyPickNumbers);
 
-        // 낫싱일 때
-        if (strikeCount == 0) {
-            System.out.println("일치하는 숫자가 없습니다 !");
-            start.runGame(enemyPickNumbers);
-        }
-
         // 게임을 더 진행해야할 때,
         if (strikeCount != 3) {
             calculatorBallCount(playerPickNumbers, enemyPickNumbers);
-            System.out.println(strikeCount + "스트라이크");
 
-            if (ballCount != 0) {
-                System.out.println(ballCount + "볼");
-            }
+            // 스트라이크와 볼 출력
+            printCount();
 
             start.runGame(enemyPickNumbers);
         }
@@ -32,6 +24,25 @@ public class GameResult {
             System.out.println(strikeCount + "스트라이크 입니다 !");
             System.out.println("게임을 종료합니다.");
             System.exit(0);
+        }
+    }
+
+    public void printCount() {
+        if (strikeCount == 0 && ballCount == 0) {
+            System.out.println("일치하는 숫자가 없습니다 !");
+        }
+
+        if (strikeCount == 0 && ballCount != 0) {
+            System.out.println(ballCount + "볼");
+        }
+
+        if (strikeCount != 0 && ballCount == 0) {
+            System.out.println(strikeCount + "스트라이크");
+        }
+
+        if (strikeCount != 0 && ballCount != 0) {
+            System.out.println(strikeCount + "스트라이크");
+            System.out.println(ballCount + "볼");
         }
     }
 

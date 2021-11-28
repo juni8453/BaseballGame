@@ -11,8 +11,6 @@ public class Main {
 
         String enemyPickNumbers = setting.gameSetting();
 
-        System.out.println("상대방이 고른 숫자 (테스트) " + enemyPickNumbers);
-
         start.runGame(enemyPickNumbers);
     }
 }
