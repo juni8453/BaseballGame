@@ -69,3 +69,8 @@
 - 이제 로또번호 자동 추첨기를 구현해보려고 한다.
 
 #### `2021.11.28 (월요일) Day -4`
+- 평소에 복권을 사는 편인데, 난수를 발생시켜서 6가지 수를 뽑아주는 프로그램을 만들면 좋겠다고 생각해서 구현했다.
+- 구현 중에 큰 어려움은 없었는데, Main 메소드가 있는 LottoMachine 클래스에서 setting.settingNumbers() 이후 모든 작업은 LottoSetting 클래스에서 이루어진다.
+  이렇게 하는게 좋은지 아니면 settingNumber() 메서드를 return 시켜서 Main에서 또 shuffleNumbers() 메소드를 호출하는 LottoMachine, LottoSetting 클래스를 왔다갔다 해서 값을 주고받는
+  과정을 거치는게 좋은지 아직 잘 모르겠다..
+- 생각보다 빨리 끝나서 다른 아이디어를 생각해야겠다.. 
