@@ -1,13 +1,11 @@
 package lotto;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class LottoSetting {
 
     private int count = 0;
+    private int buyerWantCount = 0;
 
     public void settingNumbers() {
         List<Integer> lottoNumbers = new ArrayList<>();
@@ -25,7 +23,13 @@ public class LottoSetting {
     }
 
     public void pickNumbers(List<Integer> lottoNumbers) {
-        if (count < 5) {
+        Scanner sc = new Scanner(System.in);
+        if (count == 0) {
+            System.out.println("몇 개를 추천받으십니까 ?");
+            buyerWantCount = sc.nextInt();
+        }
+
+        if (count < buyerWantCount) {
             lottoNumbers.stream().limit(6).sorted(Comparator.naturalOrder())
                     .forEach(s -> System.out.print(s + "번" + " "));
             System.out.println();
@@ -33,11 +37,10 @@ public class LottoSetting {
             settingNumbers();
         }
 
-        if (count == 5) {
+        if (count == buyerWantCount) {
             stopMachine();
         }
     }
-
 
     public void stopMachine() {
         System.out.println("=========================");
