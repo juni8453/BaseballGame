@@ -11,6 +11,7 @@ public class Main {
 
         String enemyPickNumbers = setting.gameSetting();
 
+        System.out.println(enemyPickNumbers);
         start.runGame(enemyPickNumbers);
     }
 }
