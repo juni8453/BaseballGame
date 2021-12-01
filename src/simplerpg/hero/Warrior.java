@@ -24,7 +24,12 @@ public class Warrior implements HeroInterface {
     }
 
     @Override
-    public void attackMonster() {
+    public void attack() {
+
+    }
+
+    @Override
+    public void attackedMonster() {
 
     }
 

@@ -1,5 +1,6 @@
 package simplerpg.monster;
 
-public interface MonsterInterface {
+public interface Monster {
 
+    void attckHero();
 }

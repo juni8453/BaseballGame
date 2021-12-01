@@ -25,7 +25,12 @@ public class Mage implements HeroInterface {
     }
 
     @Override
-    public void attackMonster() {
+    public void attack() {
+
+    }
+
+    @Override
+    public void attackedMonster() {
 
     }
 
