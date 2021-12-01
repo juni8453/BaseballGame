@@ -2,5 +2,11 @@ package simplerpg.hero;
 
 public interface HeroInterface {
 
-    void settingHero();
+    void attackMonster();
+
+    void buyItem();
+
+    void useHealthPotion();
+
+    void useManaPotion();
 }

@@ -23,9 +23,23 @@ public class Warrior implements HeroInterface {
         this.level = level;
     }
 
-    // 구현 보류
     @Override
-    public void settingHero() {
+    public void attackMonster() {
+
+    }
+
+    @Override
+    public void buyItem() {
+
+    }
+
+    @Override
+    public void useHealthPotion() {
+
+    }
+
+    @Override
+    public void useManaPotion() {
 
     }
 
