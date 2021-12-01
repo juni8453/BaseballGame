@@ -2,7 +2,9 @@ package simplerpg.hero;
 
 public interface HeroInterface {
 
-    void attackMonster();
+    void attack();
+
+    void attackedMonster();
 
     void buyItem();
 

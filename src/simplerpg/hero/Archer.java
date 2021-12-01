@@ -23,7 +23,12 @@ public class Archer implements HeroInterface {
         this.level = level;
     }
     @Override
-    public void attackMonster() {
+    public void attack() {
+
+    }
+
+    @Override
+    public void attackedMonster() {
 
     }
 
