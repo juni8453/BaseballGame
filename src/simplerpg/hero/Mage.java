@@ -12,6 +12,7 @@ public class Mage implements HeroInterface {
     public Mage(String name) {
         this(150, 300, 5, 8, 50, 1);
         this.name = name;
+        
     }
 
     Mage(int healthPoint, int manaPoint, int attackPoint, int defencePoint, int money, int level) {
