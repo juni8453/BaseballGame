@@ -8,5 +8,6 @@ public class Main {
 
         // 영웅 클래스 선택
         setting.choiceHero();
+
     }
 }
