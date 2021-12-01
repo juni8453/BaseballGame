@@ -28,5 +28,33 @@ public class Warrior implements HeroInterface {
     public void settingHero() {
 
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHealthPoint() {
+        return healthPoint;
+    }
+
+    public int getManaPoint() {
+        return manaPoint;
+    }
+
+    public int getAttackPoint() {
+        return attackPoint;
+    }
+
+    public int getDefencePoint() {
+        return defencePoint;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public int getLevel() {
+        return level;
+    }
 }
 
