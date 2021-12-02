@@ -24,13 +24,8 @@ public class Warrior implements HeroInterface {
     }
 
     @Override
-    public void attack() {
-
-    }
-
-    @Override
-    public void attackedMonster() {
-
+    public void attackedMonster(int attackDamage) {
+        this.healthPoint = this.healthPoint - attackDamage;
     }
 
     @Override

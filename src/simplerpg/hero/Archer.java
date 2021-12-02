@@ -22,14 +22,11 @@ public class Archer implements HeroInterface {
         this.money = money;
         this.level = level;
     }
-    @Override
-    public void attack() {
 
-    }
 
     @Override
-    public void attackedMonster() {
-
+    public void attackedMonster(int attackDamage) {
+        this.healthPoint = this.healthPoint - attackDamage;
     }
 
     @Override

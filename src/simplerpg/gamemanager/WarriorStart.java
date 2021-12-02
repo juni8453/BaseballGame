@@ -1,6 +1,10 @@
 package simplerpg.gamemanager;
 
 import simplerpg.hero.Warrior;
+import simplerpg.map.perion.PerionTown;
+import simplerpg.map.perion.huntingstage.PerionBeginnerHuntingStage;
+import simplerpg.map.perion.huntingstage.PerionExpertHuntingStage;
+import simplerpg.map.perion.huntingstage.PerionMasterHuntingStage;
 
 import java.util.Scanner;
 
@@ -8,6 +12,8 @@ public class WarriorStart {
 
     public void warriorStartGame(String heroName) {
         Warrior warrior = new Warrior(heroName);
+        PerionTown perionTown = new PerionTown();
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("전사 클래스를 선택하셨습니다.");
@@ -20,15 +26,37 @@ public class WarriorStart {
         System.out.println("현재 방어력 : " + warrior.getDefencePoint());
         System.out.println("=======================");
 
-        System.out.println("사냥터 이동[1] 상점 이동[2]");
-        int checkNumber = sc.nextInt();
+        int checkMove = perionTown.entrancePerion();
 
-        if (checkNumber == 1) {
-            System.out.println("어떤 사냥터에 입장하십니까?");
-            System.out.println("현재 레벨로 갈 수 있는 사냥터는 " + "입니다.");
+        // 사냥터 이동 선택 시
+        if (checkMove == 1) {
+            System.out.println("어떤 사냥터로 이동하십니까 ?");
+            System.out.println("초보자 사냥터[1] 중급자 사냥터[2] 마스터 사냥터[3]");
+            int checkHuntingStage = sc.nextInt();
+
+            if (checkHuntingStage == 1) {
+                PerionBeginnerHuntingStage beginnerStage = new PerionBeginnerHuntingStage();
+                beginnerStage.entranceBrginner(warrior);
+            }
+
+            if (checkHuntingStage == 2) {
+                PerionExpertHuntingStage expertStage = new PerionExpertHuntingStage();
+                expertStage.entranceExpert();
+            }
+
+            if (checkHuntingStage == 3) {
+                PerionMasterHuntingStage masterStage = new PerionMasterHuntingStage();
+                masterStage.entranceMaster();
+            }
         }
 
-        if (checkNumber == 2) {
+        // 포션 상점 이동 시
+        if (checkMove == 2) {
+
+        }
+
+        // 장비 상점 이동 시
+        if (checkMove == 3) {
 
         }
     }
